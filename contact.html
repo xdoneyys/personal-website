@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Januar</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">JANN</a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Kontak</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+<!-- ==================== CONTACT CONTENT ==================== -->
+<main class="contact-page">
+    <div class="container">
+        <h1 class="page-title">Talk to Januar</h1>
+        
+        <div class="contact-simple">
+            <!-- Informasi Kontak -->
+            <div class="contact-info-simple">
+                <p class="contact-text">
+                    Untuk menghubungi saya, silakan kirimkan email ke 
+                    <strong><a href="mailto:sysadmin@januarr.my.id">sysadmin@januarr.my.id</a></strong>. 
+                    Untuk kebutuhan bisnis ataupun kerjasama silakan hubungi 
+                    <strong><a href="https://wa.me/628xxxxxxxxxx" target="_blank">+62 8xx-xxxx-xxxx</a></strong> (Januar).
+                </p>
+                
+                <p class="contact-text">
+                    Jika kamu menghubungi saya via email yang tertera di halaman ini, 
+                    sangat disarankan untuk <em>encrypt</em> email yang kamu kirimkan ke saya. 
+                    Informasi <strong>PGP Key</strong> saya ada di bawah ini.
+                </p>
+            </div>
+
+            <!-- Security Key -->
+            <div class="security-key">
+                <h2>Security Key</h2>
+                <div class="key-table">
+                    <div class="key-row">
+                        <span class="key-label">Key ID</span>
+                        <span class="key-value">: 280856F6</span>
+                    </div>
+                    <div class="key-row">
+                        <span class="key-label">Key Type</span>
+                        <span class="key-value">: EdDSA</span>
+                    </div>
+                    <div class="key-row">
+                        <span class="key-label">Key Size</span>
+                        <span class="key-value">: 256</span>
+                    </div>
+                    <div class="key-row">
+                        <span class="key-label">Fingerprint</span>
+                        <span class="key-value fingerprint">: 50EE E1D5 A526 7F04 A220 2315 520C 44E6 2808 56F6</span>
+                    </div>
+                    <div class="key-row">
+                        <span class="key-label">User ID</span>
+                        <span class="key-value">: sysadmin@januarr.my.id</span>
+                    </div>
+                </div>
+
+                <!-- PGP Public Key Block -->
+                <div class="pgp-key-block">
+                    <label for="pgpKey">---BEGIN PGP PUBLIC KEY BLOCK---</label>
+                    <textarea id="pgpKey" class="pgp-textarea" readonly rows="12">
+xjMEZOJNxRYJKwYBBBAHaRw8BAQdAMM8Fm91yFqBeK4knqUP1/h6h337ZtLag
+h4e+LeSsR6fNJ3R1Z3VoQGFwcm1hbnRvlMnVbSA8dGVndWhA
+YXByaWFudG8u
+Y29tPsKMBBAWCgA+BYJk4k3FBAsJBwgJKFIMROYoCFb2AXUI
+CgQwAAIBAhkB
+ApsDAh4BFiEEU07h1aUmfwSiICMVUgxE5igIVvYAAMTcAQDR
+YFFgyTPTZDYg
+eQK49VBCaUDnLz5nsWb9FCwBM+TraAEAuNQte73U+jTyv3oR
+                    </textarea>
+                    <button class="btn-copy" onclick="copyPGPKey()">
+                        <i class="fas fa-copy"></i> Salin Key
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://twitter.com/username" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/username" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/username" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:email@example.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="copyright">
+                &copy; 2026 januar. Dibuat dengan <i class="fas fa-heart" style="color: #ff6b6b;"></i>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Fungsi copy PGP Key
+        function copyPGPKey() {
+            const textarea = document.getElementById('pgpKey');
+            textarea.select();
+            textarea.setSelectionRange(0, 99999);
+            
+            try {
+                navigator.clipboard.writeText(textarea.value).then(() => {
+                    alert('✅ PGP Public Key berhasil disalin!');
+                });
+            } catch (err) {
+                // Fallback untuk browser lama
+                document.execCommand('copy');
+                alert('✅ PGP Public Key berhasil disalin!');
+            }
+        }
+    </script>
+</body>
+</html>
