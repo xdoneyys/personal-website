@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /assets/
+Disallow: /CNAME
+
+Sitemap: https://januarr.my.id/sitemap.xml
